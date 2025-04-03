@@ -27,7 +27,8 @@ class LessonSeeder extends Seeder
 		    $title = Str::of(Arr::random($data[ rand(0, count($data) - 1) ])[ 1 ])
 		                ->stripTags()
 		                ->apa()
-		                ->trim();
+		                ->trim()
+					    ->limit(50, '.', true);
 		    
 		    if (substr($title, -1) === "") {
 			    $title .= ".";

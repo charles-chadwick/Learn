@@ -33,10 +33,11 @@ class PageSeeder extends Seeder {
 				        ->create(
 					        [
 						        "number"  => $index,
-						        "content" => "<p>" . implode("", $content) . "</p>"
+						        "content" => implode("", $content)
 					        ]
 				        );
 				
+				$index++;
 			}
 			
 		}
