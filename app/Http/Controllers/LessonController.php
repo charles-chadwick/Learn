@@ -46,16 +46,21 @@ class LessonController extends Controller {
 	 * @param int $chapter_number
 	 * @return Response
 	 */
-	public function page ($lesson_id, $chapter_number, $page_number = null) {
+	public function page ($lesson_id, int $chapter_number, $page_number = null) {
 		
-		$chapter = Chapter::with("lesson", "pages")
+		$chapter = Chapter::with(
+			[
+				"lesson", "pages" => function ($query) use ($page_number) {
+				
+				$query->where('number', $page_number === null ? 1 : $page_number);
+			} ]
+		)
 		                  ->where('lesson_id', $lesson_id)
 		                  ->where('number', $chapter_number)
-		                  ->where('number', $page_number)
 		                  ->first();
 		
 		return Inertia::render(
-			'Chapters/Index',
+			'Pages/Index',
 			[
 				'lesson'  => $chapter->lesson,
 				'chapter' => $chapter,

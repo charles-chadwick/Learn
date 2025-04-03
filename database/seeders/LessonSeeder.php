@@ -28,7 +28,7 @@ class LessonSeeder extends Seeder
 		                ->stripTags()
 		                ->apa()
 		                ->trim()
-					    ->limit(50, '.', true);
+					    ->limit(25, '.', true);
 		    
 		    if (substr($title, -1) === "") {
 			    $title .= ".";

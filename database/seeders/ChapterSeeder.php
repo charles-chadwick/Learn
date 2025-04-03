@@ -30,7 +30,7 @@ class ChapterSeeder extends Seeder {
 				$title = Str::of(Arr::random($data[ rand(0, count($data) - 1) ])[ 1 ])
 				            ->stripTags()
 				            ->apa()
-				            ->trim()->limit(50, '.', true);
+				            ->trim()->limit(25, '.', true);
 				
 				if (substr($title, -1) === "") {
 					$title .= ".";
