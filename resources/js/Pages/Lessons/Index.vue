@@ -2,6 +2,7 @@
 import { ArrowRightCircleIcon} from '@heroicons/vue/20/solid';
 import Layout from "../Layout.vue";
 import LearnDetail from "../Partials/LearnDetail.vue";
+import LessonNav from "../Partials/LessonNav.vue";
 
 defineProps({
   lessons : {
@@ -13,10 +14,10 @@ defineProps({
 <template>
 
   <Layout>
-
+<LessonNav />
   <ul
       role="list"
-      class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
     <li
         v-for="lesson in lessons"
         :key="lesson.id"

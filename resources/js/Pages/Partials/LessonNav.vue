@@ -17,27 +17,35 @@ export default {
   },
   data() {
 
+    /**
+     * Get the breadcrumbs.
+     * @todo This really needs to be better, possibly
+     * @type {[{id: string, name: string, href, current: boolean}]}
+     */
     const navigation = [
       {
         id      : "home",
         name    : 'Home',
-        href    : '/',
+        href    : route("lessons.index"),
         current : false
-      },
-      {
+      }
+    ];
+
+    if ( this.lesson !== undefined ) {
+      navigation.push({
         id      : this.lesson.id,
         name    : this.lesson.title,
         href    : route('lessons.chapters', { lesson_id : this.lesson.id }),
         current : false
-      }
-    ];
+      })
+    }
 
     if ( this.chapter !== undefined ) {
       navigation.push({
         id      : this.chapter.id,
         name    : `Chapter ${this.chapter.number}: ${this.chapter.title}`,
         href    : route('lessons.chapter', {
-          lesson_id      : this.lesson.id,
+          lesson_id  : this.lesson.id,
           chapter_id : this.chapter.id
         }),
         current : false
