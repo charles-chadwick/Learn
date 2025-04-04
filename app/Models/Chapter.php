@@ -5,15 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Chapter extends Model
-{
-    use SoftDeletes;
+class Chapter extends Model {
 	
-	public function lesson() {
+	use SoftDeletes;
+	
+	public function lesson () {
+		
 		return $this->belongsTo(Lesson::class);
 	}
 	
-	public function pages() {
+	public function pages () {
+		
 		return $this->hasMany(Page::class);
 	}
+
 }

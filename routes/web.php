@@ -12,6 +12,6 @@ Route::prefix("/lessons")
 	     Route::get("/{lesson_id}/chapters", [ LessonController::class, "chapters" ])
 	          ->name("lessons.chapters");
 		 
-	     Route::get("/{lesson_id}/chapter/{chapter_number}/page/{page_number?}", [ LessonController::class, "page" ])
+	     Route::get("/{lesson_id}/chapter/{chapter_id}/page/{page_number?}", [ LessonController::class, "page" ])
 	          ->name("lessons.chapter");
      });
