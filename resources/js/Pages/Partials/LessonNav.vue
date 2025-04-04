@@ -38,7 +38,7 @@ export default {
         name    : `Chapter ${this.chapter.number}: ${this.chapter.title}`,
         href    : route('lessons.chapter', {
           lesson_id      : this.lesson.id,
-          chapter_number : this.chapter.number
+          chapter_id : this.chapter.id
         }),
         current : false
       });

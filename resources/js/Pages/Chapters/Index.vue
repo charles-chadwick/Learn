@@ -36,7 +36,7 @@ defineProps({
 
           <template #button>
             <a
-                :href="route('lessons.chapter', {lesson_id:  lesson.id, chapter_number:  chapter.number})"
+                :href="route('lessons.chapter', {lesson_id:  lesson.id, chapter_id: chapter.id})"
                 class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-stone-900">
               <ArrowRightCircleIcon
                   class="size-5 text-stone-400"
