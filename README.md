@@ -12,7 +12,7 @@ Install the usual things via package managers, and get the database set up.
 
 ``php artisan migrate``
 
-``php db:seed``
+``php artisan db:seed``
 
 
 ## Usage
